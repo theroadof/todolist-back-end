@@ -15,6 +15,7 @@ import java.util.Arrays;
 import java.util.Enumeration;
 
 @Slf4j
+@Order(-5)
 @Aspect
 @Component
 public class AppLogAspect {
