@@ -34,7 +34,6 @@ public class AppLogAspect {
         log.info("Request URL: {}", request.getRequestURL().toString());
         log.info("Request Method: {}", request.getMethod());
         log.info("IP: {}", request.getRemoteAddr());
-        log.info("StudentVo-Agent:{}", request.getHeader("StudentVo-Agent"));
         log.info("Class Method:{}.{}", joinPoint.getSignature().getDeclaringTypeName(), joinPoint.getSignature().getName());
         log.info("Cookies:{}", request.getCookies());
         log.info("Params:{}", Arrays.toString(joinPoint.getArgs()));
