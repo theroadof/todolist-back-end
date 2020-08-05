@@ -21,6 +21,7 @@ jacocoTestReport {
 
 
 dependencies {
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
     compile group: 'org.flywaydb', name: 'flyway-core', version: '6.5.3'
     implementation 'org.springframework.boot:spring-boot-starter-web:2.3.1.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.3.1.RELEASE'
