@@ -19,7 +19,6 @@ jacocoTestReport {
     }
 }
 
-
 dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.8'
     compile group: 'org.flywaydb', name: 'flyway-core', version: '6.5.3'

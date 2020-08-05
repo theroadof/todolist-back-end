@@ -58,7 +58,7 @@ public class AppLogAspect {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
         log.info("Class Method:{}.{}", method.getDeclaringClass().getName(), method.getName());
-        log.info("Response:{}", rvt);
+        log.info("Response:{}", rvt.toString());
         threadLocal.remove();
     }
 }
