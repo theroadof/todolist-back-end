@@ -1,5 +1,11 @@
 package teddy.lin.todobackend.dto;
 
+import lombok.Data;
+import lombok.experimental.Accessors;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Data
 public class ResponseTodo {
     private int id;
 
