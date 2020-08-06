@@ -20,25 +20,25 @@ public class TodoController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
-    public List<ResponseTodo> getAll(){
+    public List<ResponseTodo> getAll() {
         return todoService.getAll();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ResponseTodo add(@RequestBody RequestTodo requestTodo){
+    public ResponseTodo add(@RequestBody RequestTodo requestTodo) {
         return todoService.save(requestTodo);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/{id}")
-    public ResponseTodo update(@PathVariable Integer id,@RequestBody RequestTodo requestTodo){
-        return todoService.update(id,requestTodo);
+    public ResponseTodo update(@PathVariable Integer id, @RequestBody RequestTodo requestTodo) {
+        return todoService.update(id, requestTodo);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Integer id){
+    public void delete(@PathVariable Integer id) {
         todoService.delete(id);
     }
 }

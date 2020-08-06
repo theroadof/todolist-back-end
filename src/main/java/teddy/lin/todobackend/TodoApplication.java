@@ -12,7 +12,7 @@ public class TodoApplication extends WebMvcConfigurationSupport {
     }
 
     @Override
-    public void addCorsMappings(CorsRegistry registry){
+    public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowCredentials(true)
                 .allowedHeaders("*")

@@ -12,13 +12,13 @@ import java.util.List;
 @Component
 public class TodoMapper {
 
-    public ResponseTodo toResponseTodo(Todo todo){
+    public ResponseTodo toResponseTodo(Todo todo) {
         ResponseTodo responseTodo = new ResponseTodo();
-        BeanUtils.copyProperties(todo,responseTodo);
+        BeanUtils.copyProperties(todo, responseTodo);
         return responseTodo;
     }
 
-    public List<ResponseTodo> toResponseTodos(List<Todo> todos){
+    public List<ResponseTodo> toResponseTodos(List<Todo> todos) {
         List<ResponseTodo> responseTodos = new ArrayList<>();
         todos.forEach(todo -> {
             responseTodos.add(toResponseTodo(todo));
@@ -28,7 +28,7 @@ public class TodoMapper {
 
     public Todo toTodo(RequestTodo requestTodo) {
         Todo todo = new Todo();
-        BeanUtils.copyProperties(requestTodo,todo);
+        BeanUtils.copyProperties(requestTodo, todo);
         return todo;
     }
 }

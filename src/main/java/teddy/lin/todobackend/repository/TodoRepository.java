@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import teddy.lin.todobackend.model.Todo;
 
 @Repository
-public interface TodoRepository extends JpaRepository<Todo,Integer> {
+public interface TodoRepository extends JpaRepository<Todo, Integer> {
 }
