@@ -20,9 +20,7 @@ public class TodoMapper {
 
     public List<ResponseTodo> toResponseTodos(List<Todo> todos) {
         List<ResponseTodo> responseTodos = new ArrayList<>();
-        todos.forEach(todo -> {
-            responseTodos.add(toResponseTodo(todo));
-        });
+        todos.forEach(todo -> responseTodos.add(toResponseTodo(todo)));
         return responseTodos;
     }
 

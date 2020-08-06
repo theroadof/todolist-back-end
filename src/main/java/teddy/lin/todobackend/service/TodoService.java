@@ -1,6 +1,5 @@
 package teddy.lin.todobackend.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import teddy.lin.todobackend.dto.RequestTodo;
 import teddy.lin.todobackend.dto.ResponseTodo;
@@ -15,11 +14,14 @@ import static java.util.Objects.isNull;
 @Service
 public class TodoService {
 
-    @Autowired
-    private TodoRepository todoRepository;
+    private final TodoRepository todoRepository;
 
-    @Autowired
-    private TodoMapper todoMapper;
+    private final TodoMapper todoMapper;
+
+    public TodoService(TodoRepository todoRepository, TodoMapper todoMapper) {
+        this.todoRepository = todoRepository;
+        this.todoMapper = todoMapper;
+    }
 
     public List<ResponseTodo> getAll() {
         List<Todo> todos = todoRepository.findAll();
