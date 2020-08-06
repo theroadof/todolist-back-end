@@ -34,4 +34,9 @@ public class TodoController {
         return todoService.save(requestTodo);
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping("/{id}")
+    public ResponseTodo update(@PathVariable Integer id,@RequestBody RequestTodo requestTodo){
+        return todoService.update(id,requestTodo);
+    }
 }

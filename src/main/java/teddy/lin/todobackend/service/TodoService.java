@@ -33,11 +33,11 @@ public class TodoService {
     }
 
     public ResponseTodo update(int id, RequestTodo requestTodo) {
-        if(id!= requestTodo.getId()){
+        if (id != requestTodo.getId()) {
             return null;
         }
         Todo oldTodo = todoRepository.findById(id).orElse(null);
-        if(isNull(oldTodo)){
+        if (isNull(oldTodo)) {
             return null;
         }
         Todo newTodo = todoMapper.toTodo(requestTodo);
