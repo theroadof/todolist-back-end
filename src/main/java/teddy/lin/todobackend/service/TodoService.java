@@ -1,6 +1,5 @@
 package teddy.lin.todobackend.service;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import teddy.lin.todobackend.dto.RequestTodo;
