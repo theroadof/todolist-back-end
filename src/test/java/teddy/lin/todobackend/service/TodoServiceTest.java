@@ -21,7 +21,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class TodoServiceTest {
+class TodoServiceTest {
 
     private static final int ID = 1;
     @Mock

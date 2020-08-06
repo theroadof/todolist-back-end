@@ -1,23 +1,22 @@
 package teddy.lin.todobackend.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import teddy.lin.todobackend.dto.RequestTodo;
 import teddy.lin.todobackend.dto.ResponseTodo;
-import teddy.lin.todobackend.model.Todo;
 import teddy.lin.todobackend.service.TodoService;
 
 import java.util.List;
-
-import static java.util.Objects.isNull;
 
 @RestController
 @RequestMapping("/todos")
 public class TodoController {
 
-    @Autowired
-    private TodoService todoService;
+    private final TodoService todoService;
+
+    public TodoController(TodoService todoService) {
+        this.todoService = todoService;
+    }
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
@@ -28,9 +27,6 @@ public class TodoController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ResponseTodo add(@RequestBody RequestTodo requestTodo){
-        if (isNull(requestTodo)){
-
-        }
         return todoService.save(requestTodo);
     }
 
@@ -38,5 +34,11 @@ public class TodoController {
     @PutMapping("/{id}")
     public ResponseTodo update(@PathVariable Integer id,@RequestBody RequestTodo requestTodo){
         return todoService.update(id,requestTodo);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id){
+        todoService.delete(id);
     }
 }
