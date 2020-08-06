@@ -36,7 +36,7 @@ public class AppLogAspect {
         log.info("Request Method: {}", request.getMethod());
         log.info("IP: {}", request.getRemoteAddr());
         log.info("Class Method:{}.{}", joinPoint.getSignature().getDeclaringTypeName(), joinPoint.getSignature().getName());
-        log.info("Cookies:{}", request.getCookies());
+        log.info("Cookies:{}", (Object[]) request.getCookies());
         log.info("Params:{}", Arrays.toString(joinPoint.getArgs()));
 
         Enumeration<String> enums = request.getParameterNames();
