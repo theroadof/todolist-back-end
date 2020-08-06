@@ -7,6 +7,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
+import teddy.lin.todobackend.dto.RequestTodo;
 import teddy.lin.todobackend.dto.ResponseTodo;
 import teddy.lin.todobackend.mapper.TodoMapper;
 import teddy.lin.todobackend.model.Todo;
@@ -46,5 +47,23 @@ public class TodoServiceTest {
         //then
         assertEquals(1,responseTodos.size());
         assertEquals(responseTodoList.get(0).getId(),responseTodos.get(0).getId());
+    }
+
+    @Test
+    void should_return_todo_when_save_given_todo() {
+        //given
+        Todo todo = new Todo(1,"test",true);
+        RequestTodo requestTodo = new RequestTodo(1,"test",true);
+        ResponseTodo expectedTodo = new ResponseTodo(1,"test",true);
+        when(todoMapper.toTodo(requestTodo)).thenReturn(todo);
+        when(todoRepository.save(todo)).thenReturn(todo);
+        when(todoMapper.toResponseTodo(todo)).thenReturn(expectedTodo);
+
+        //when
+        ResponseTodo responseTodo = todoService.save(requestTodo);
+
+        //then
+        assertEquals(requestTodo.getText(),responseTodo.getText());
+        assertEquals(requestTodo.isStatus(),responseTodo.isStatus());
     }
 }

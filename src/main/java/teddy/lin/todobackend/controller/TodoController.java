@@ -2,14 +2,15 @@ package teddy.lin.todobackend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import teddy.lin.todobackend.dto.RequestTodo;
 import teddy.lin.todobackend.dto.ResponseTodo;
+import teddy.lin.todobackend.model.Todo;
 import teddy.lin.todobackend.service.TodoService;
 
 import java.util.List;
+
+import static java.util.Objects.isNull;
 
 @RestController
 @RequestMapping("/todos")
@@ -22,6 +23,15 @@ public class TodoController {
     @GetMapping
     public List<ResponseTodo> getAll(){
         return todoService.getAll();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping
+    public ResponseTodo add(@RequestBody RequestTodo requestTodo){
+        if (isNull(requestTodo)){
+
+        }
+        return todoService.save(requestTodo);
     }
 
 }

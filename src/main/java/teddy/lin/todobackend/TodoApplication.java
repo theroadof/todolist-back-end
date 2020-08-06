@@ -16,7 +16,7 @@ public class TodoApplication extends WebMvcConfigurationSupport {
         registry.addMapping("/**")
                 .allowCredentials(true)
                 .allowedHeaders("*")
-                .allowedOrigins("*")
+                .allowedOrigins("http://localhost:3000")
                 .allowedMethods("*");
     }
 }

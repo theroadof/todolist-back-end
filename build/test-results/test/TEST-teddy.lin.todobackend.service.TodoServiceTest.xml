@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="teddy.lin.todobackend.service.TodoServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-05T09:34:51" hostname="ZHA-ITA054-W10" time="0.776">
+<testsuite name="teddy.lin.todobackend.service.TodoServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-08-06T03:09:35" hostname="ZHA-ITA054-W10" time="0.714">
   <properties/>
-  <testcase name="should_return_all_todos_when_get_all_given_none()" classname="teddy.lin.todobackend.service.TodoServiceTest" time="0.776"/>
+  <testcase name="should_return_all_todos_when_get_all_given_none()" classname="teddy.lin.todobackend.service.TodoServiceTest" time="0.701"/>
+  <testcase name="should_return_todo_when_save_given_todo()" classname="teddy.lin.todobackend.service.TodoServiceTest" time="0.008"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
